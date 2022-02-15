@@ -10,7 +10,6 @@ public class HeadHunterApiService {
         //1. TODO интеграция с HH API https://github.com/hhru/api/blob/master/docs/vacancies.md#search GET /vacancies
 
         //TODO использовать apache http client (CloseableHttpClient)
-        //TODO создать DTO Vacancy в которой будет информация по компании, зарплате, должности и ключевым навыкам
 
         return null;
     }
