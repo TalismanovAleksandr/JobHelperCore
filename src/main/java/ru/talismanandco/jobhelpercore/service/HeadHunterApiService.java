@@ -1,17 +1,54 @@
 package ru.talismanandco.jobhelpercore.service;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+import ru.talismanandco.jobhelpercore.dto.HeadHunterVacancies;
+import ru.talismanandco.jobhelpercore.dto.HeadHunterVacancy;
 import ru.talismanandco.jobhelpercore.dto.Vacancy;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class HeadHunterApiService {
 
+    //Default pagination params
+    public List<HeadHunterVacancy> getVacancies(String queryParam) throws IOException {
+        return this.getVacancies(queryParam,"0","100");
+    }
 
-    //TODO поменять сигнатуру метода с List<?> на List<Vacancy>
-    public List<Vacancy> getVacancies(String queryParam) {
-        //1. TODO интеграция с HH API https://github.com/hhru/api/blob/master/docs/vacancies.md#search GET /vacancies
+    public List<HeadHunterVacancy> getVacancies(String queryParam,String page, String perPage) throws IOException {
+        final CloseableHttpClient httpClient = HttpClients.createDefault();
+        List<Vacancy> result = new ArrayList<>();
+        try {
+            URIBuilder uriBuilder = new URIBuilder("https://api.hh.ru/vacancies");
+            URI params = uriBuilder
+                    .setParameter("text", queryParam)
+                    .setParameter("page", page)
+                    .setParameter("per_page", perPage)
+                    .build();
+            HttpGet httpGet = new HttpGet(params);
+            httpGet.addHeader("Accept", "application/json");
+            CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
 
-        //TODO использовать apache http client (CloseableHttpClient)
+            String responseString = EntityUtils.toString(httpResponse.getEntity());
+            ObjectMapper mapper = new ObjectMapper().configure(
+                    DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,
+                    false
+            );
+            HeadHunterVacancies headHunterVacancies = mapper.readValue(responseString, HeadHunterVacancies.class);
+            return headHunterVacancies.getItems();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
 
         return null;
     }
