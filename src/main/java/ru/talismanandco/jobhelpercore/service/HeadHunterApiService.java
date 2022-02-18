@@ -21,36 +21,50 @@ import java.util.List;
 public class HeadHunterApiService {
 
     //Default pagination params
-    public List<HeadHunterVacancy> getVacancies(String queryParam) throws IOException {
+    public List<HeadHunterVacancy> getVacancies(String queryParam) throws IOException, URISyntaxException {
         return this.getVacancies(queryParam,"0","100");
     }
 
-    public List<HeadHunterVacancy> getVacancies(String queryParam,String page, String perPage) throws IOException {
+    public List<HeadHunterVacancy> getVacancies(String queryParam,String page, String perPage) throws IOException, URISyntaxException {
         final CloseableHttpClient httpClient = HttpClients.createDefault();
         List<Vacancy> result = new ArrayList<>();
-        try {
-            URIBuilder uriBuilder = new URIBuilder("https://api.hh.ru/vacancies");
-            URI params = uriBuilder
-                    .setParameter("text", queryParam)
-                    .setParameter("page", page)
-                    .setParameter("per_page", perPage)
-                    .build();
-            HttpGet httpGet = new HttpGet(params);
-            httpGet.addHeader("Accept", "application/json");
-            CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
 
-            String responseString = EntityUtils.toString(httpResponse.getEntity());
-            ObjectMapper mapper = new ObjectMapper().configure(
-                    DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,
-                    false
-            );
-            HeadHunterVacancies headHunterVacancies = mapper.readValue(responseString, HeadHunterVacancies.class);
-            return headHunterVacancies.getItems();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
+        URIBuilder uriBuilder = new URIBuilder("https://api.hh.ru/vacancies");
+        URI params = uriBuilder
+                .setParameter("text", queryParam)
+                .setParameter("page", page)
+                .setParameter("per_page", perPage)
+                .build();
+        HttpGet httpGet = new HttpGet(params);
+        httpGet.addHeader("Accept", "application/json");
+        CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
 
-        return null;
+        String responseString = EntityUtils.toString(httpResponse.getEntity());
+        ObjectMapper mapper = new ObjectMapper().configure(
+                DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,
+                false
+        );
+        HeadHunterVacancies headHunterVacancies = mapper.readValue(responseString, HeadHunterVacancies.class);
+        return headHunterVacancies.getItems();
+    }
+
+    public HeadHunterVacancy getVacancy(long id) throws URISyntaxException, IOException {
+        final CloseableHttpClient httpClient = HttpClients.createDefault();
+        List<Vacancy> result = new ArrayList<>();
+
+        URIBuilder uriBuilder = new URIBuilder("https://api.hh.ru/vacancies/"+id);
+        URI params = uriBuilder.build();
+        HttpGet httpGet = new HttpGet(params);
+        httpGet.addHeader("Accept", "application/json");
+        CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
+
+        String responseString = EntityUtils.toString(httpResponse.getEntity());
+        ObjectMapper mapper = new ObjectMapper().configure(
+                DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,
+                false
+        );
+        HeadHunterVacancy headHunterVacancy = mapper.readValue(responseString, HeadHunterVacancy.class);
+        return headHunterVacancy;
     }
 
 }

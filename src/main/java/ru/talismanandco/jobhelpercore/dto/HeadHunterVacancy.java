@@ -4,24 +4,29 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HeadHunterVacancy {
+    Long id;
     String name;
+    String description;
     HeadHunterSalary salary;
     HeadHunterEmployer employer;
-    List<String> keySkills;
+    List<String> keySkills = new ArrayList<>();
 
-//TODO Выбрать оптимальный вариант для keySkills
-//    @JsonProperty("key_skills")
-//    List<HeadHunterSkill> keySkills;
-//    List<Map<String ,String>> keySkills;
+    @JsonSetter("branded_description")
+    public void setBrandedDescription(String brandedDescription){
+        this.description+= brandedDescription;
+    }
 
     @JsonSetter("key_skills")
-    public void addSkill(Map<String ,String> skill){
-        this.keySkills.add(skill.get("name"));
+    public void addSkill(HeadHunterSkill[] skills)
+    {
+        for (HeadHunterSkill skill : skills) {
+            this.keySkills.add(skill.name);
+        }
     }
 }
