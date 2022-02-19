@@ -1,4 +1,4 @@
-package ru.talismanandco.jobhelpercore.dto;
+package ru.talismanandco.jobhelpercore.dto.headhunter;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;

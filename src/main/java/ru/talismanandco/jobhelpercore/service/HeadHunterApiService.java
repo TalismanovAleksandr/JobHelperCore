@@ -7,8 +7,8 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import ru.talismanandco.jobhelpercore.dto.HeadHunterVacancies;
-import ru.talismanandco.jobhelpercore.dto.HeadHunterVacancy;
+import ru.talismanandco.jobhelpercore.dto.headhunter.HeadHunterVacancies;
+import ru.talismanandco.jobhelpercore.dto.headhunter.HeadHunterVacancy;
 
 import java.io.IOException;
 import java.net.URI;

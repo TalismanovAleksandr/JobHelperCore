@@ -2,7 +2,7 @@ package ru.talismanandco.jobhelpercore.service;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.talismanandco.jobhelpercore.dto.HeadHunterVacancy;
+import ru.talismanandco.jobhelpercore.dto.headhunter.HeadHunterVacancy;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
