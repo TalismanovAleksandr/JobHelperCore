@@ -8,6 +8,9 @@ import java.util.List;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HeadHunterVacancies {
-    List<HeadHunterVacancy> items;
-    Integer found, pages, page,per_page;
+    private List<HeadHunterVacancy> items;
+    private Integer found;
+    private Integer pages;
+    private Integer page;
+    private Integer per_page;
 }

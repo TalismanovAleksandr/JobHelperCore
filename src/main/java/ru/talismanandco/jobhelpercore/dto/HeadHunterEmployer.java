@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class HeadHunterEmployer {
-    String name;
+    private String name;
 }

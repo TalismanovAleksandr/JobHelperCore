@@ -4,7 +4,8 @@ import lombok.Data;
 
 @Data
 public class HeadHunterSalary {
-    Float from,to;
-    String currency;
-    Boolean gross;
+    private Integer from;
+    private Integer to;
+    private String currency;
+    private Boolean gross;
 }

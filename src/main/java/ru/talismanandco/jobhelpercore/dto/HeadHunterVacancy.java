@@ -10,23 +10,23 @@ import java.util.List;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HeadHunterVacancy {
-    Long id;
-    String name;
-    String description;
-    HeadHunterSalary salary;
-    HeadHunterEmployer employer;
-    List<String> keySkills = new ArrayList<>();
+    private Long id;
+    private String name;
+    private String description;
+    private HeadHunterSalary salary;
+    private HeadHunterEmployer employer;
+    private List<String> keySkills = new ArrayList<>();
 
     @JsonSetter("branded_description")
-    public void setBrandedDescription(String brandedDescription){
+    private void setBrandedDescription(String brandedDescription){
         this.description+= brandedDescription;
     }
 
     @JsonSetter("key_skills")
-    public void addSkill(HeadHunterSkill[] skills)
+    private void addSkill(HeadHunterSkill[] skills)
     {
         for (HeadHunterSkill skill : skills) {
-            this.keySkills.add(skill.name);
+            this.keySkills.add(skill.getName());
         }
     }
 }
