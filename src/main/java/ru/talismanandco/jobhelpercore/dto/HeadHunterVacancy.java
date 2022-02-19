@@ -18,13 +18,12 @@ public class HeadHunterVacancy {
     private List<String> keySkills = new ArrayList<>();
 
     @JsonSetter("branded_description")
-    private void setBrandedDescription(String brandedDescription){
-        this.description+= brandedDescription;
+    private void setBrandedDescription(String brandedDescription) {
+        this.description += brandedDescription;
     }
 
     @JsonSetter("key_skills")
-    private void addSkill(HeadHunterSkill[] skills)
-    {
+    private void addSkill(HeadHunterSkill[] skills) {
         for (HeadHunterSkill skill : skills) {
             this.keySkills.add(skill.getName());
         }
