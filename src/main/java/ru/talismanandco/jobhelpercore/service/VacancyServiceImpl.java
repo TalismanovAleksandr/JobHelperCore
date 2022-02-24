@@ -2,7 +2,8 @@ package ru.talismanandco.jobhelpercore.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.talismanandco.jobhelpercore.entity.VacancyEntity;
+import ru.talismanandco.jobhelpercore.dto.Vacancy;
+import ru.talismanandco.jobhelpercore.dto.headhunter.HeadHunterVacancy;
 import ru.talismanandco.jobhelpercore.repository.VacancyRepository;
 
 import java.util.List;
@@ -11,31 +12,13 @@ import java.util.List;
 @RequiredArgsConstructor
 public class VacancyServiceImpl implements VacancyService {
     private final VacancyRepository vacancyRepository;
+    private final HeadHunterApiService headHunterApiService;
 
     @Override
-    public VacancyEntity save(VacancyEntity vacancy) {
-        //check before save?
-        return vacancyRepository.save(vacancy);
-    }
+    public List<Vacancy> findVacanciesByVacancyName(String vacancyName) {
+        //TODO RebuyBoy
 
-    @Override
-    public void delete(VacancyEntity vacancy) {
-        vacancyRepository.delete(vacancy);
-    }
-
-    @Override
-    public void delete(Long id) {
-        vacancyRepository.deleteById(id);
-    }
-
-    @Override
-    public List<VacancyEntity> getAll() {
-        return vacancyRepository.findAll();
-    }
-
-    @Override
-    public List<VacancyEntity> getWithFilters() {
-        //Specification??
+        List<HeadHunterVacancy> vacancies = headHunterApiService.getVacancies(vacancyName);
         return null;
     }
 }

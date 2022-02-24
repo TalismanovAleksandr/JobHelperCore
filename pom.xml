@@ -73,6 +73,11 @@
             <plugin>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
+                <configuration>
+                    <url>jdbc:h2:mem:mydb</url>
+                    <user>sa</user>
+                    <password>password</password>
+                </configuration>
                 <executions>
                     <execution>
                         <phase>generate-sources</phase>
