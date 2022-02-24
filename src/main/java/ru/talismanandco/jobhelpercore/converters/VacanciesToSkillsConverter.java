@@ -1,10 +1,16 @@
 package ru.talismanandco.jobhelpercore.converters;
 
+import org.springframework.stereotype.Component;
 import ru.talismanandco.jobhelpercore.dto.Vacancy;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
+@Component
 public class VacanciesToSkillsConverter implements GenericConverter<List<Vacancy>, Map<String, Integer>> {
 
     @Override

@@ -4,7 +4,12 @@ package ru.talismanandco.jobhelpercore.entity;
 import lombok.*;
 import ru.talismanandco.jobhelpercore.converters.ListToStringConverter;
 
-import javax.persistence.*;
+import javax.persistence.Convert;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.List;
 
 @Data
@@ -20,7 +25,4 @@ public class VacancyEntity {
     private SalaryEntity salary;
     @Convert(converter = ListToStringConverter.class)
     private List<String> skills;
-
-
-    //TODO RebuyBoy. @Entity class + flyway migration + CREATE TABLE, INSERTS + незабыть о VacancyService и VacancyRepository
 }
