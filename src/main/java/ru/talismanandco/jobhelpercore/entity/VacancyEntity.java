@@ -1,18 +1,13 @@
 package ru.talismanandco.jobhelpercore.entity;
 
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import ru.talismanandco.jobhelpercore.converters.ListToStringConverter;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Getter
-@Setter
-@ToString
+@Data
 @RequiredArgsConstructor
 @Entity(name = "vacancy")
 public class VacancyEntity {
