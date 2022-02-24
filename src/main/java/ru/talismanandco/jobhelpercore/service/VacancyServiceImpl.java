@@ -1,5 +1,6 @@
 package ru.talismanandco.jobhelpercore.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.talismanandco.jobhelpercore.entity.VacancyEntity;
 import ru.talismanandco.jobhelpercore.repository.VacancyRepository;
@@ -7,15 +8,13 @@ import ru.talismanandco.jobhelpercore.repository.VacancyRepository;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class VacancyServiceImpl implements VacancyService {
     private final VacancyRepository vacancyRepository;
 
-    public VacancyServiceImpl(VacancyRepository vacancyRepository) {
-        this.vacancyRepository = vacancyRepository;
-    }
-
     @Override
     public VacancyEntity save(VacancyEntity vacancy) {
+        //check before save?
         return vacancyRepository.save(vacancy);
     }
 

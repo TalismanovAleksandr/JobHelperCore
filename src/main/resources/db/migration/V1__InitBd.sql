@@ -4,8 +4,8 @@ CREATE TABLE vacancy
     title    varchar(250),
     company  varchar(250),
     skills   varchar(250),
-    bottom   integer,
-    top      integer,
+    bottom   numeric,
+    top      numeric,
     currency varchar(250),
     gross    boolean,
     CONSTRAINT pk_vacancy PRIMARY KEY (id)
