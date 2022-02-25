@@ -9,6 +9,7 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.springframework.stereotype.Service;
 import ru.talismanandco.jobhelpercore.dto.headhunter.HeadHunterVacancies;
 import ru.talismanandco.jobhelpercore.dto.headhunter.HeadHunterVacancy;
 import ru.talismanandco.jobhelpercore.expections.HeadHunterException;
@@ -19,6 +20,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 @Slf4j
+@Service
 public class HeadHunterApiService {
 
     private static final String VACANCIES_ADDRESS = "https://api.hh.ru/vacancies";
