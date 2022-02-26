@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -19,4 +20,17 @@ public class CourseSourceEntity {
 
     @Column(nullable = false)
     private String title;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof CourseSourceEntity)) return false;
+        CourseSourceEntity that = (CourseSourceEntity) o;
+        return Objects.equals(id, that.id) && Objects.equals(title, that.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title);
+    }
 }

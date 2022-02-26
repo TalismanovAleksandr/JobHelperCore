@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 @Getter
@@ -42,4 +43,22 @@ public class CourseEntity {
     @ManyToOne(optional = false)
     @JoinColumn(name = "course_source_id")
     private CourseSourceEntity courseSource;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof CourseEntity)) return false;
+        CourseEntity that = (CourseEntity) o;
+        return Objects.equals(id, that.id)
+                && Objects.equals(title, that.title)
+                && Objects.equals(link, that.link)
+                && Objects.equals(description, that.description)
+                && Objects.equals(free, that.free)
+                && Objects.equals(courseSource, that.courseSource);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, link, description, free, courseSource);
+    }
 }
