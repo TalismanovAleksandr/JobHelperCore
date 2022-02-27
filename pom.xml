@@ -15,6 +15,7 @@
     <description>Core for Job Helper Project</description>
     <properties>
         <java.version>11</java.version>
+        <spring.boot.version>2.6.3</spring.boot.version>
     </properties>
     <dependencies>
         <dependency>

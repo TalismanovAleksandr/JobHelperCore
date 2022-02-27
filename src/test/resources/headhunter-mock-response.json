@@ -1,0 +1,67 @@
+[
+  {
+    "id": 52331557,
+    "name": "Java Developer — Junior to Middle (Ученик)",
+    "description": null,
+    "salary": {
+      "from": 120000,
+      "to": 180000,
+      "currency": "RUR",
+      "gross": false
+    },
+    "employer": {
+      "name": "Цифровые привычки"
+    },
+    "keySkills": []
+  },
+  {
+    "id": 50874512,
+    "name": "Junior Java Backend Developer / Младший разработчик на Java",
+    "description": null,
+    "salary": {
+      "from": 50000,
+      "to": 130000,
+      "currency": "RUR",
+      "gross": false
+    },
+    "employer": {
+      "name": "Nord.Codes"
+    },
+    "keySkills": []
+  },
+  {
+    "id": 53090649,
+    "name": "Стажер-программист Java",
+    "description": null,
+    "salary": null,
+    "employer": {
+      "name": "LeverX International"
+    },
+    "keySkills": []
+  },
+  {
+    "id": 53090650,
+    "name": "Стажер-программист Java",
+    "description": null,
+    "salary": null,
+    "employer": {
+      "name": "LeverX International"
+    },
+    "keySkills": []
+  },
+  {
+    "id": 52474604,
+    "name": "Java разработчик",
+    "description": null,
+    "salary": {
+      "from": 320000,
+      "to": 550000,
+      "currency": "RUR",
+      "gross": true
+    },
+    "employer": {
+      "name": "HR Prime"
+    },
+    "keySkills": []
+  }
+]
