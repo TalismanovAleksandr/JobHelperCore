@@ -1,0 +1,46 @@
+[
+  {
+    "company": "Google",
+    "salary": {
+      "from": 100000000,
+      "to": 100000000,
+      "currency": "RUB",
+      "gross": true
+    },
+    "title": "Software Developer",
+    "skills": [
+      "Java",
+      "Spring",
+      "Git",
+      "SQL"
+    ]
+  },
+  {
+    "company": "Yandex",
+    "salary": {
+      "from": null,
+      "to": null,
+      "currency": null,
+      "gross": null
+    },
+    "title": "Senior Java Developer",
+    "skills": [
+      "Java",
+      "Spring",
+      "SQL"
+    ]
+  },
+  {
+    "company": "ООО \"ПЕЧЬ\"",
+    "salary": {
+      "from": null,
+      "to": null,
+      "currency": null,
+      "gross": null
+    },
+    "title": "Печенег",
+    "skills": [
+      "SQL"
+    ]
+  }
+]
