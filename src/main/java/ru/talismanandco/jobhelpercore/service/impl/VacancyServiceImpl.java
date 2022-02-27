@@ -1,15 +1,19 @@
-package ru.talismanandco.jobhelpercore.service;
+package ru.talismanandco.jobhelpercore.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import ru.talismanandco.jobhelpercore.dto.Vacancy;
 import ru.talismanandco.jobhelpercore.dto.headhunter.HeadHunterVacancy;
 import ru.talismanandco.jobhelpercore.repository.VacancyRepository;
+import ru.talismanandco.jobhelpercore.service.HeadHunterApiService;
+import ru.talismanandco.jobhelpercore.service.VacancyService;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Profile("!mock")
 public class VacancyServiceImpl implements VacancyService {
     private final VacancyRepository vacancyRepository;
     private final HeadHunterApiService headHunterApiService;
