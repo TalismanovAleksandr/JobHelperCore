@@ -8,6 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import ru.talismanandco.jobhelpercore.dto.Vacancy;
 import ru.talismanandco.jobhelpercore.dto.headhunter.HeadHunterVacancy;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 import java.io.IOException;
 import java.util.List;
@@ -28,13 +30,17 @@ class VacancyServiceImplTest {
     private HeadHunterApiService headHunterApiService;
 
     @Test
-    void findVacanciesByVacancyName() throws IOException {
-
+    void findVacanciesByVacancyNameHHService() throws IOException {
         List<HeadHunterVacancy> list = objectMapper.readValue(this.getClass().getClassLoader().getResourceAsStream("headhunter-mock-response.json"), new TypeReference<>() {
         });
-
         when(headHunterApiService.getVacancies(anyString())).thenReturn(list);
+        List<Vacancy> vacancies = vacancyService.findVacanciesByVacancyName("Java");
+        assertEquals(vacancies.size(),5);
+    }
 
-        List<Vacancy> java = vacancyService.findVacanciesByVacancyName("java");
+    @Test
+    void findVacanciesByVacancyNameDB() {
+        List<Vacancy> vacancies = vacancyService.findVacanciesByVacancyName("Java developer");
+        assertEquals(vacancies.get(0).getTitle(),"Java developer");
     }
 }

@@ -1,19 +1,14 @@
 package ru.talismanandco.jobhelpercore.entity;
 
 
-import lombok.*;
-import ru.talismanandco.jobhelpercore.converters.ListToStringConverter;
-
-import javax.persistence.Convert;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
+import lombok.ToString;
+import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.List;
+import java.util.Objects;
 
 @Data
-@RequiredArgsConstructor
 @Entity(name = "vacancy")
 public class VacancyEntity {
     @Id
@@ -23,6 +18,28 @@ public class VacancyEntity {
     private String company;
     @Embedded
     private SalaryEntity salary;
-    @Convert(converter = ListToStringConverter.class)
-    private List<String> skills;
+    private Timestamp createDate;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @ToString.Exclude
+    @JoinTable
+            (
+                    name = "VACANCY_SKILL",
+                    joinColumns = @JoinColumn(name = "VACANCY_ID", referencedColumnName = "ID"),
+                    inverseJoinColumns = @JoinColumn(name = "SKILL_ID", referencedColumnName = "ID")
+            )
+    private List<SkillEntity> skills;
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        VacancyEntity that = (VacancyEntity) o;
+        return Objects.equals(title, that.title) && Objects.equals(company, that.company) && Objects.equals(salary, that.salary) && Objects.equals(createDate, that.createDate) && Objects.equals(skills, that.skills);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, company, salary, createDate, skills);
+    }
 }
