@@ -15,6 +15,7 @@ public class HeadHunterVacancy {
     private String description;
     private HeadHunterSalary salary;
     private HeadHunterEmployer employer;
+    private Snippet snippet;
     private List<String> keySkills = new ArrayList<>();
 
     @JsonSetter("branded_description")

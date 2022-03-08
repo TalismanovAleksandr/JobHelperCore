@@ -9,7 +9,8 @@ import ru.talismanandco.jobhelpercore.dto.Vacancy;
 import ru.talismanandco.jobhelpercore.dto.headhunter.HeadHunterVacancy;
 import java.io.IOException;
 import java.util.List;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class HeadHunterVacancyConverterTest {

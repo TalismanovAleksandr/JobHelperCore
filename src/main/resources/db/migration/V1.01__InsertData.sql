@@ -23,6 +23,13 @@ insert into skill(name)
 values ('git');
 
 insert into vacancy_skill(vacancy_id, skill_id)
-values (1, 1),(1, 4),(1, 5),(1, 8),
-       (2, 2),(2, 4),(2, 8),
-       (3, 3),(3, 4),(3, 8);
+values (1, 1),
+       (1, 4),
+       (1, 5),
+       (1, 8),
+       (2, 2),
+       (2, 4),
+       (2, 8),
+       (3, 3),
+       (3, 4),
+       (3, 8);

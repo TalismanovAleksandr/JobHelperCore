@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.util.Set;
 
 @Data
 @Builder
@@ -18,5 +18,5 @@ public class Vacancy {
     private Salary salary;
     private String title;
     /** пример "Java" "Spring Framework" */
-    private List<String> skills;
+    private Set<String> skills;
 }

@@ -3,6 +3,7 @@ package ru.talismanandco.jobhelpercore.converters;
 import org.springframework.stereotype.Component;
 import ru.talismanandco.jobhelpercore.dto.Vacancy;
 
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -19,7 +20,7 @@ public class VacanciesToSkillsConverter implements GenericConverter<List<Vacancy
         Map<String, Integer> map = new HashMap<>();
 
         for (Vacancy vacancy : vacancies) {
-            List<String> skills = vacancy.getSkills();
+            Collection<String> skills = vacancy.getSkills();
             for (String skill : skills) {
                 Integer value = map.get(skill);
                 //noinspection Java8MapApi

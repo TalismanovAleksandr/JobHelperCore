@@ -5,7 +5,8 @@ import java.util.Set;
 
 public class Utils {
 
-    private static final Set<String> allSkills = Set.of("JVM", "Collections", "Stream", "Concurrency", "СУБД", "Postgres", "MySql", "Kotlin", "Java", "SQL");
+    private static final Set<String> allSkills = Set.of("JVM", "Collections", "Stream", "Concurrency", "СУБД",
+            "Postgres", "MySql", "Kotlin", "Java", "SQL", "Spring", "lombok", "mysql", "docker");
 
     public static Set<String> requirementsToSkills(String requirements) {
         Set<String> result = new HashSet<>();

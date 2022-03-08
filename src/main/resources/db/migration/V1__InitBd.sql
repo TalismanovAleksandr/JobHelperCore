@@ -1,12 +1,12 @@
 CREATE TABLE vacancy
 (
-    id         SERIAL,
-    title      varchar(250),
-    company    varchar(250),
-    salary_from     numeric,
-    salary_to        numeric,
-    currency   varchar(250),
-    gross      boolean,
+    id          SERIAL,
+    title       varchar(250),
+    company     varchar(250),
+    salary_from numeric,
+    salary_to   numeric,
+    currency    varchar(250),
+    gross       boolean,
     create_date timestamp,
     CONSTRAINT pk_vacancy PRIMARY KEY (id)
 );

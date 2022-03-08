@@ -4,7 +4,15 @@ package ru.talismanandco.jobhelpercore.entity;
 import lombok.Data;
 import lombok.ToString;
 
-import javax.persistence.*;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
@@ -36,7 +44,7 @@ public class VacancyEntity {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()){
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
         VacancyEntity that = (VacancyEntity) o;

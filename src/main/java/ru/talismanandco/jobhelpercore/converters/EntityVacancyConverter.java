@@ -19,7 +19,7 @@ public class EntityVacancyConverter implements GenericConverter<List<VacancyEnti
 
     @Override
     public List<Vacancy> convert(List<VacancyEntity> entities) {
-        ArrayList<Vacancy> vacancies = new ArrayList<>();
+        List<Vacancy> vacancies = new ArrayList<>();
         for (VacancyEntity entity : entities) {
            vacancies.add(Vacancy.builder()
                            .company(entity.getCompany())
@@ -27,7 +27,7 @@ public class EntityVacancyConverter implements GenericConverter<List<VacancyEnti
                            .salary(mapper.convertValue(entity.getSalary(), Salary.class))
                            .skills(entity.getSkills().stream()
                                    .map(SkillEntity::getName)
-                                   .collect(Collectors.toList()))
+                                   .collect(Collectors.toSet()))
                 .build());
         }
         return vacancies;

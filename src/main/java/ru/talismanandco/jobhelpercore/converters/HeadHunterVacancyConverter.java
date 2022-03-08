@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 import ru.talismanandco.jobhelpercore.dto.Salary;
 import ru.talismanandco.jobhelpercore.dto.Vacancy;
 import ru.talismanandco.jobhelpercore.dto.headhunter.HeadHunterVacancy;
+import ru.talismanandco.jobhelpercore.util.Utils;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,7 +21,8 @@ public class HeadHunterVacancyConverter implements GenericConverter<List<HeadHun
         return hhVacancies.stream()
                 .map(hhVacancy -> Vacancy.builder()
                                 .title(hhVacancy.getName())
-                                .skills(hhVacancy.getKeySkills())
+                                .company(hhVacancy.getEmployer().getName())
+                                .skills(Utils.requirementsToSkills(hhVacancy.getSnippet().getRequirement()))
                                 .salary(mapper.convertValue(hhVacancy.getSalary(), Salary.class))
                                 .build())
                 .collect(Collectors.toList());

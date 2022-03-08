@@ -34,7 +34,7 @@ public class HeadHunterApiServiceImpl implements HeadHunterApiService {
     /**    Default pagination params */
     @Override
     public List<HeadHunterVacancy> getVacancies(String queryParam) {
-        return this.getVacancies(queryParam,"0","100");
+        return this.getVacancies(queryParam,"0","3");
     }
 
     @Override

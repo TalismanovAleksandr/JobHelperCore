@@ -1,0 +1,218 @@
+{
+  "items": [
+    {
+      "id": "52331557",
+      "premium": false,
+      "name": "Java Developer — Junior to Middle (Ученик)",
+      "department": null,
+      "has_test": false,
+      "response_letter_required": false,
+      "area": {
+        "id": "1",
+        "name": "Москва",
+        "url": "https://api.hh.ru/areas/1"
+      },
+      "salary": {
+        "from": 120000,
+        "to": 180000,
+        "currency": "RUR",
+        "gross": false
+      },
+      "type": {
+        "id": "open",
+        "name": "Открытая"
+      },
+      "address": null,
+      "response_url": null,
+      "sort_point_distance": null,
+      "published_at": "2022-03-07T13:03:53+0300",
+      "created_at": "2022-03-07T13:03:53+0300",
+      "archived": false,
+      "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=52331557",
+      "insider_interview": null,
+      "url": "https://api.hh.ru/vacancies/52331557?host=hh.ru",
+      "alternate_url": "https://hh.ru/vacancy/52331557",
+      "relations": [],
+      "employer": {
+        "id": "3280416",
+        "name": "Цифровые привычки",
+        "url": "https://api.hh.ru/employers/3280416",
+        "alternate_url": "https://hh.ru/employer/3280416",
+        "logo_urls": {
+          "90": "https://hhcdn.ru/employer-logo/3106800.png",
+          "240": "https://hhcdn.ru/employer-logo/3106801.png",
+          "original": "https://hhcdn.ru/employer-logo-original/666417.png"
+        },
+        "vacancies_url": "https://api.hh.ru/vacancies?employer_id=3280416",
+        "trusted": true
+      },
+      "snippet": {
+        "requirement": "Понимая, что кандидаты могут иметь пробелы в знаниях, нехватку опыта, мы сделали бесплатный курс по <highlighttext>Java</highlighttext> разработке. Продолжительность — 2,5...",
+        "responsibility": "Про курс <highlighttext>Java</highlighttext> Dev «Junior to Middle»‎. Индивидуальные консультации. - научишься работать с системами контроля версий и писать промышленный код..."
+      },
+      "contacts": null,
+      "schedule": {
+        "id": "fullDay",
+        "name": "Полный день"
+      },
+      "working_days": [],
+      "working_time_intervals": [],
+      "working_time_modes": [],
+      "accept_temporary": false
+    },
+    {
+      "id": "50874512",
+      "premium": false,
+      "name": "Junior Java Backend Developer / Младший разработчик на Java",
+      "department": null,
+      "has_test": false,
+      "response_letter_required": false,
+      "area": {
+        "id": "2",
+        "name": "Санкт-Петербург",
+        "url": "https://api.hh.ru/areas/2"
+      },
+      "salary": {
+        "from": 50000,
+        "to": 130000,
+        "currency": "RUR",
+        "gross": false
+      },
+      "type": {
+        "id": "open",
+        "name": "Открытая"
+      },
+      "address": {
+        "city": null,
+        "street": null,
+        "building": null,
+        "description": null,
+        "lat": null,
+        "lng": null,
+        "raw": null,
+        "metro": {
+          "station_name": "Чёрная речка",
+          "line_name": "Московско-Петроградская",
+          "station_id": "15.214",
+          "line_id": "15",
+          "lat": 59.985455,
+          "lng": 30.300833
+        },
+        "metro_stations": [
+          {
+            "station_name": "Чёрная речка",
+            "line_name": "Московско-Петроградская",
+            "station_id": "15.214",
+            "line_id": "15",
+            "lat": 59.985455,
+            "lng": 30.300833
+          }
+        ],
+        "id": "2130738"
+      },
+      "response_url": null,
+      "sort_point_distance": null,
+      "published_at": "2022-03-08T14:44:48+0300",
+      "created_at": "2022-03-08T14:44:48+0300",
+      "archived": false,
+      "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=50874512",
+      "insider_interview": null,
+      "url": "https://api.hh.ru/vacancies/50874512?host=hh.ru",
+      "alternate_url": "https://hh.ru/vacancy/50874512",
+      "relations": [],
+      "employer": {
+        "id": "3292790",
+        "name": "Nord.Codes",
+        "url": "https://api.hh.ru/employers/3292790",
+        "alternate_url": "https://hh.ru/employer/3292790",
+        "logo_urls": {
+          "90": "https://hhcdn.ru/employer-logo/2635297.png",
+          "240": "https://hhcdn.ru/employer-logo/2635298.png",
+          "original": "https://hhcdn.ru/employer-logo-original/548456.png"
+        },
+        "vacancies_url": "https://api.hh.ru/vacancies?employer_id=3292790",
+        "trusted": true
+      },
+      "snippet": {
+        "requirement": "Знание языка <highlighttext>Java</highlighttext>. Знакомство с паттернами и принципами проектирования. Понимание базовых принципов работы сети интернет и веб-сервисов (HTTP, REST). ",
+        "responsibility": "Доработка и поддержка существующей функциональности backend. Работа в команде над достижением высокой доступности / надежности существующей высоконагруженной системы."
+      },
+      "contacts": null,
+      "schedule": {
+        "id": "fullDay",
+        "name": "Полный день"
+      },
+      "working_days": [],
+      "working_time_intervals": [],
+      "working_time_modes": [],
+      "accept_temporary": false
+    },
+    {
+      "id": "52549895",
+      "premium": false,
+      "name": "Java-разработчик",
+      "department": null,
+      "has_test": false,
+      "response_letter_required": false,
+      "area": {
+        "id": "2",
+        "name": "Санкт-Петербург",
+        "url": "https://api.hh.ru/areas/2"
+      },
+      "salary": {
+        "from": 3500,
+        "to": null,
+        "currency": "USD",
+        "gross": false
+      },
+      "type": {
+        "id": "open",
+        "name": "Открытая"
+      },
+      "address": null,
+      "response_url": null,
+      "sort_point_distance": null,
+      "published_at": "2022-03-06T15:02:09+0300",
+      "created_at": "2022-03-06T15:02:09+0300",
+      "archived": false,
+      "apply_alternate_url": "https://hh.ru/applicant/vacancy_response?vacancyId=52549895",
+      "insider_interview": null,
+      "url": "https://api.hh.ru/vacancies/52549895?host=hh.ru",
+      "alternate_url": "https://hh.ru/vacancy/52549895",
+      "relations": [],
+      "employer": {
+        "id": "949366",
+        "name": "Wikiroutes",
+        "url": "https://api.hh.ru/employers/949366",
+        "alternate_url": "https://hh.ru/employer/949366",
+        "logo_urls": {
+          "90": "https://hhcdn.ru/employer-logo/1382873.png",
+          "240": "https://hhcdn.ru/employer-logo/1382874.png",
+          "original": "https://hhcdn.ru/employer-logo-original/235049.png"
+        },
+        "vacancies_url": "https://api.hh.ru/vacancies?employer_id=949366",
+        "trusted": true
+      },
+      "snippet": {
+        "requirement": "Стек технологий. - <highlighttext>java</highlighttext> 8, spring boot, spring data, lombok, mysql, docker. Желателен иметь: - опыт транспортными проектами, форматами транспорта - GTFS. - ",
+        "responsibility": "Работа в команде с PM, product-менеджером, dev-ops и другими людьми, готовыми выслушать не только мнение, но и предложения..."
+      },
+      "contacts": null,
+      "schedule": {
+        "id": "remote",
+        "name": "Удаленная работа"
+      },
+      "working_days": [],
+      "working_time_intervals": [],
+      "working_time_modes": [],
+      "accept_temporary": false
+    }
+  ],
+  "found": 10899,
+  "pages": 666,
+  "per_page": 3,
+  "page": 0,
+  "clusters": null,
+  "arguments": null,
+  "alternate_url": "https://hh.ru/search/vacancy?enable_snippets=true&items_on_page=3&text=java"
+}
