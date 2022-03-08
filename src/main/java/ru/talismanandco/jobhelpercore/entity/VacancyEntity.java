@@ -3,6 +3,7 @@ package ru.talismanandco.jobhelpercore.entity;
 
 import lombok.Data;
 import lombok.ToString;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
@@ -32,10 +33,18 @@ public class VacancyEntity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
         VacancyEntity that = (VacancyEntity) o;
-        return Objects.equals(title, that.title) && Objects.equals(company, that.company) && Objects.equals(salary, that.salary) && Objects.equals(createDate, that.createDate) && Objects.equals(skills, that.skills);
+        return Objects.equals(title, that.title)
+                && Objects.equals(company, that.company)
+                && Objects.equals(salary, that.salary)
+                && Objects.equals(createDate, that.createDate)
+                && Objects.equals(skills, that.skills);
     }
 
     @Override

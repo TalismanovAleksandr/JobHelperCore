@@ -21,17 +21,17 @@ import java.util.List;
 public class VacancyServiceImpl implements VacancyService {
     private final VacancyRepository vacancyRepository;
     private final HeadHunterApiService headHunterApiService;
-    private final EntityVacancyConverter vacConverter;
-    private final HeadHunterVacancyConverter hhConverter;
+    private final EntityVacancyConverter vacancyEntityConverter;
+    private final HeadHunterVacancyConverter headHunterVacancyConverter;
 
     @Override
     public List<Vacancy> findVacanciesByVacancyName(String vacancyName) {
         List<Vacancy> vacancies;
         List<VacancyEntity> vacanciesByTitle = vacancyRepository.findByTitle(vacancyName);
         if (vacanciesByTitle.isEmpty()) {
-            vacancies = hhConverter.convert(headHunterApiService.getVacancies(vacancyName));
+            vacancies = headHunterVacancyConverter.convert(headHunterApiService.getVacancies(vacancyName));
         } else {
-            vacancies = vacConverter.convert(vacanciesByTitle);
+            vacancies = vacancyEntityConverter.convert(vacanciesByTitle);
         }
         return vacancies;
     }
