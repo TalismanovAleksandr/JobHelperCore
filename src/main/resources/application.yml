@@ -25,5 +25,5 @@ talismanov:
   courses:
     epam:
       #переписать на относительный путь или класспас
-      file-path: C:\\PROJECTS\\JobHelperCore\\src\\main\\resources\\learn_epam_courses.html
+      file-path: src/main/resources/learn_epam_courses.html
       base-url: https://learn.epam.com

@@ -14,7 +14,7 @@ CREATE TABLE vacancy
 CREATE TABLE skill
 (
     id   SERIAL,
-    name varchar(250),
+    name varchar(250) UNIQUE ,
     CONSTRAINT pk_skill PRIMARY KEY (id)
 );
 

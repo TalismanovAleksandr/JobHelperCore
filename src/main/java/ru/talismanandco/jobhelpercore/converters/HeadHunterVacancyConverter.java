@@ -15,16 +15,18 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class HeadHunterVacancyConverter implements GenericConverter<List<HeadHunterVacancy>, List<Vacancy>> {
     private final ObjectMapper mapper;
+    private final Utils utils;
 
     @Override
-    public List<Vacancy> convert(List<HeadHunterVacancy> hhVacancies) {
-        return hhVacancies.stream()
-                .map(hhVacancy -> Vacancy.builder()
-                                .title(hhVacancy.getName())
-                                .company(hhVacancy.getEmployer().getName())
-                                .skills(Utils.requirementsToSkills(hhVacancy.getSnippet().getRequirement()))
-                                .salary(mapper.convertValue(hhVacancy.getSalary(), Salary.class))
-                                .build())
+    public List<Vacancy> convert(List<HeadHunterVacancy> headHunterVacancies) {
+        return headHunterVacancies.stream()
+                .map(headHunterVacancy -> Vacancy.builder()
+                        .title(headHunterVacancy.getName())
+                        .company(headHunterVacancy.getEmployer().getName())
+                        .skills(utils.requirementsToSkills(headHunterVacancy.getSnippet() == null ?
+                                "" : headHunterVacancy.getSnippet().getRequirement()))
+                        .salary(mapper.convertValue(headHunterVacancy.getSalary(), Salary.class))
+                        .build())
                 .collect(Collectors.toList());
     }
 }
