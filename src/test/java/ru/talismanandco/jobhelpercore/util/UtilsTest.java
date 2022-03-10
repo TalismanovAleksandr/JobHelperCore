@@ -1,12 +1,18 @@
 package ru.talismanandco.jobhelpercore.util;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 class UtilsTest {
+
+    @Autowired
+    private Utils utils;
 
     Set<String> resultSkills = Set.of("JVM", "Collections", "Stream", "Concurrency", "СУБД", "Postgres", "MySql");
 
@@ -17,13 +23,13 @@ class UtilsTest {
 
     @Test
     void requirementsToSkills() {
-        Set<String> resultingSet = Utils.requirementsToSkills(REQUIREMENTS);
+        Set<String> resultingSet = utils.requirementsToSkills(REQUIREMENTS);
         assertTrue(resultSkills.containsAll(resultingSet));
     }
 
     @Test
     void requirementsToSkills2() {
-        Set<String> resultingSet = Utils.requirementsToSkills("jvm");
+        Set<String> resultingSet = utils.requirementsToSkills("jvm");
         assertTrue(resultingSet.contains("jvm"));
     }
 }
